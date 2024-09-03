@@ -1,5 +1,5 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import ReactDOM from "react-dom/client";
 
 class classReact {
     constructor() {
@@ -7,14 +7,12 @@ class classReact {
     }
 
     makeElement() {
-        ReactDOM.render(
-            React.createElement('header', null, 'Moja pierwsza strona z klasą React'),
-            rootParent
-            );
+        const element = React.createElement('header', null, 'Moja pierwsza strona z klasą React')
+        rootParent.render(element)
     }    
 }
 
-const rootParent = document.querySelector('#root')
+const rootParent = ReactDOM.createRoot(document.querySelector('#root'))
 const HeaderCl = new classReact
 
 console.log(Math.random())
@@ -26,8 +24,6 @@ else {
 }
 
 function HeaderFn() {
-    ReactDOM.render(
-        React.createElement('header', null, 'Moja pierwsza strona z funkcją React'),
-        rootParent
-        );
+    const element = React.createElement('header', null, 'Moja pierwsza strona z funkcją React')
+    rootParent.render(element)
 }
