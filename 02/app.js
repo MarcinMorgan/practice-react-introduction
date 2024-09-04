@@ -1,26 +1,20 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-class classReact {
-    constructor() {
-
-    }
-
-    makeElement() {
-        const element = React.createElement('header', null, 'Moja pierwsza strona z klasą React')
-        rootParent.render(element)
-    }    
-}
-
 const rootParent = ReactDOM.createRoot(document.querySelector('#root'))
-const HeaderCl = new classReact
+
+class HeaderCl extends React.Component {
+    render() {
+        return <header>Moja pierwsza strona z klasą React</header>
+    }
+}
 
 console.log(Math.random())
 if (Math.random() > 0.5) {
     HeaderFn()
 }
 else {
-    HeaderCl.makeElement()
+    rootParent.render(<div><HeaderCl /></div>)
 }
 
 function HeaderFn() {
