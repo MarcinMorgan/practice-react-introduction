@@ -1,5 +1,8 @@
-import ReactItem from "./MenuItem";
+import React from 'react';
+import { createRoot } from 'react-dom/client';
+import MenuItem from './MenuItem';
 
-const itemReact = new ReactItem
+const root = createRoot(document.querySelector('#root'));
+const App = () => <div><MenuItem text="kontakt" url="/kontakt"/></div>;
 
-itemReact.test()
+root.render(<App />);
